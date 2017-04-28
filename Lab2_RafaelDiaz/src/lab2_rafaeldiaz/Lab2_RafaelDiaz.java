@@ -8,7 +8,9 @@ import java.util.Scanner;
  * @author Rafael
  */
 public class Lab2_RafaelDiaz {
-
+static int edad1, resist1,cuenta, edad2, resist2, ID, edad, resist;
+static String alias, casta, arma1,apodo, grado, arma2,nombre, rango, arma;
+ 
     static Scanner sc = new Scanner(System.in);
 
     /**
@@ -18,6 +20,7 @@ public class Lab2_RafaelDiaz {
         ArrayList rusos = new ArrayList();
         ArrayList alemanes = new ArrayList();
         ArrayList alumnos = new ArrayList();
+        ArrayList caidos = new ArrayList();
         int opcion = 0;
         while (opcion != 5) {
             System.out.println("*****MENU*****");
@@ -234,7 +237,205 @@ public class Lab2_RafaelDiaz {
                     }
                     break;
                 case (4):
-
+                    int contador = 3;
+                    int turno=1;
+                    while(contador!=1){
+                    
+                        if (turno==1) {
+                            for (int i = 0; i < rusos.size(); i++) {
+                                if (i>=alemanes.size()) {
+                                    if (arma.equals("Ak-47")) {
+                                        alemanes.set(alemanes.size(),new Alemanes(alias, casta, arma1, edad1, resist1-27) );
+                                        if(resist1<=0){
+                                            caidos.add(alemanes.get(i));
+                                            alemanes.remove(alemanes.size());
+                                        }
+                                    }else if(arma.equals("Revolver Navant")){
+                                        alemanes.set(alemanes.size(),new Alemanes(alias, casta, arma1, edad1, resist1-13) );
+                                        if(resist1<=0){
+                                            caidos.add(alemanes.get(i));
+                                            alemanes.remove(alemanes.size());
+                                        }
+                                    }else if(arma.equals("RPG-7")){
+                                        alemanes.set(alemanes.size(),new Alemanes(alias, casta, arma1, edad1, resist1-57) );
+                                        if(resist1<=0){
+                                            caidos.add(alemanes.get(i));
+                                            alemanes.remove(alemanes.size());
+                                        }
+                                    }
+                                } else {
+                                    if (arma.equals("Ak-47")) {
+                                        alemanes.set(i,new Alemanes(alias, casta, arma1, edad1, resist1-27) );
+                                        if(resist1<=0){
+                                            caidos.add(alemanes.get(i));
+                                            alemanes.remove(i);
+                                        }
+                                    }else if(arma.equals("Revolver Navant")){
+                                        alemanes.set(i,new Alemanes(alias, casta, arma1, edad1, resist1-13) );
+                                        if(resist1<=0){
+                                            caidos.add(alemanes.get(i));
+                                            alemanes.remove(i);
+                                        }
+                                    }else if(arma.equals("RPG-7")){
+                                        alemanes.set(i,new Alemanes(alias, casta, arma1, edad1, resist1-57) );
+                                        if(resist1<=0){
+                                            caidos.add(alemanes.get(i));
+                                            alemanes.remove(i);
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            for (int i = 0; i < rusos.size(); i++) {
+                                if (i>=alumnos.size()) {
+                                    if (arma.equals("Ak-47")) {
+                                        alumnos.set(alumnos.size(),new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-27) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(alumnos.size());
+                                        }
+                                    }else if(arma.equals("Revolver Navant")){
+                                        alumnos.set(alumnos.size(),new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-13) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(alumnos.size());
+                                        }
+                                    }else if(arma.equals("RPG-7")){
+                                        alumnos.set(alumnos.size(),new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-57) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(alumnos.size());
+                                        }
+                                    }
+                                } else {
+                                    if (arma.equals("Ak-47")) {
+                                        alumnos.set(i,new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-27) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(i);
+                                        }
+                                    }else if(arma.equals("Revolver Navant")){
+                                        alumnos.set(i,new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-13) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(i);
+                                        }
+                                    }else if(arma.equals("RPG-7")){
+                                        alumnos.set(i,new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-57) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(i);
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            turno=2;
+                        }else if(turno==2){
+                            
+                            
+                            for (int i = 0; i < alemanes.size(); i++) {
+                                if (i>=rusos.size()) {
+                                    if (arma1.equals("Subfusiles MP 40")) {
+                                        rusos.set(rusos.size(),new Rusos(nombre, rango, arma, ID, edad, resist-25) );
+                                        if(resist1<=0){
+                                            caidos.add(rusos.get(i));
+                                            rusos.remove(rusos.size());
+                                        }
+                                    }else if(arma1.equals("Ametralladora MG42")){
+                                        rusos.set(rusos.size(),new Rusos(nombre, rango, arma, ID, edad, resist-32) );
+                                        if(resist1<=0){
+                                            caidos.add(rusos.get(i));
+                                           rusos.remove(rusos.size());
+                                        }
+                                    }else if(arma1.equals("RPG-7")){
+                                        rusos.set(rusos.size(),new Rusos(nombre, rango, arma, ID, edad, resist-11) );
+                                        if(resist1<=0){
+                                            caidos.add(rusos.get(i));
+                                            rusos.remove(rusos.size());
+                                        }
+                                    }
+                                } else {
+                                    if (arma1.equals("Subfusiles MP 40")) {
+                                        rusos.set(i,new Rusos(nombre, rango, arma, ID, edad, resist-25) );
+                                        if(resist1<=0){
+                                            caidos.add(rusos.get(i));
+                                            rusos.remove(i);
+                                        }
+                                    }else if(arma1.equals("Ametralladora MG42")){
+                                        rusos.set(i,new Rusos(nombre, rango, arma, ID, edad, resist-32) );
+                                        if(resist1<=0){
+                                            caidos.add(rusos.get(i));
+                                           rusos.remove(i);
+                                        }
+                                    }else if(arma1.equals("RPG-7")){
+                                        rusos.set(i,new Rusos(nombre, rango, arma, ID, edad, resist-11) );
+                                        if(resist1<=0){
+                                            caidos.add(rusos.get(i));
+                                            rusos.remove(i);
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            for (int i = 0; i < alemanes.size(); i++) {
+                                if (i>=alumnos.size()) {
+                                    if (arma1.equals("Ak-47")) {
+                                        alumnos.set(alumnos.size(),new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-27) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(alumnos.size());
+                                        }
+                                    }else if(arma1.equals("Revolver Navant")){
+                                        alumnos.set(alumnos.size(),new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-13) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(alumnos.size());
+                                        }
+                                    }else if(arma1.equals("RPG-7")){
+                                        alumnos.set(alumnos.size(),new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-57) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(alumnos.size());
+                                        }
+                                    }
+                                } else {
+                                    if (arma1.equals("Ak-47")) {
+                                        alumnos.set(i,new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-27) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(i);
+                                        }
+                                    }else if(arma1.equals("Revolver Navant")){
+                                        alumnos.set(i,new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-13) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(i);
+                                        }
+                                    }else if(arma1.equals("RPG-7")){
+                                        alumnos.set(i,new Los_Alumnos_de_Programacion_ll(apodo, grado, arma2, cuenta, edad2, resist2-57) );
+                                        if(resist1<=0){
+                                            caidos.add(alumnos.get(i));
+                                            alumnos.remove(i);
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            turno=3;
+                        }else{
+                            
+                            
+                            turno=1;
+                        }
+                        
+                    }
                     break;
                 default:
                     System.out.println(">>>>>Esa no es una opcion<<<<<");
