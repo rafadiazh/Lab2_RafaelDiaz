@@ -13,17 +13,16 @@ public class Los_Alumnos_de_Programacion_ll {
     String apodo, gradoacademico, tipoarma;
     int numcuenta, edad, resistencia;
 
-    public Los_Alumnos_de_Programacion_ll(String apodo, String gradoacademico, String tipoarma) {
+    public Los_Alumnos_de_Programacion_ll(String apodo, String gradoacademico, String tipoarma, int numcuenta, int edad, int resistencia) {
         this.apodo = apodo;
         this.gradoacademico = gradoacademico;
         this.tipoarma = tipoarma;
-    }
-
-    public Los_Alumnos_de_Programacion_ll(int numcuenta, int edad, int resistencia) {
         this.numcuenta = numcuenta;
         this.edad = edad;
         this.resistencia = resistencia;
     }
+
+    
 
     public String getApodo() {
         return apodo;

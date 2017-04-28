@@ -13,16 +13,15 @@ public class Alemanes {
     String alias, casta, tipoarma;
     int edad, resistencia;
 
-    public Alemanes(String alias, String casta, String tipoarma) {
+    public Alemanes(String alias, String casta, String tipoarma, int edad, int resistencia) {
         this.alias = alias;
         this.casta = casta;
         this.tipoarma = tipoarma;
-    }
-
-    public Alemanes(int edad, int resistencia) {
         this.edad = edad;
         this.resistencia = resistencia;
     }
+
+    
 
     public String getAlias() {
         return alias;
